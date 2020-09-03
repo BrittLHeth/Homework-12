@@ -1,53 +1,53 @@
 
-// // Fetch the JSON data and console log it
-// d3.json('samples.json').then(function(data) {
-//     var sample_values = data.samples.sample_values;
-//     var otu_ids = data.samples.otu_ids;
-//     var otu_labels = data.samples.otu_labels;
-//     console.log(data);
-// });
+// Fetch the JSON data and console log it
+d3.json('samples.json').then(function(data) {
+    var sample_values = data.samples.sample_values;
+    var otu_ids = data.samples.otu_ids;
+    var otu_labels = data.samples.otu_labels;
+    console.log(data);
+});
 
 
-// //bar chart starter
-// var yticks = otu_labels.slice(0, 10).map(otu_ids => "OTU {otu_ids}").reverse();
+//bar chart starter
+var yticks = otu_labels.slice(0, 10).map(otu_ids => "OTU {otu_ids}").reverse();
 
-// var trace1 = {
-//     x: sample_values.slice(0, 10).reverse(),
-//     y: yticks,
-//     text: otu_labels.slice(0, 10).reverse(),
-//     type: "bar"
-// };
+var trace1 = {
+    x: sample_values.slice(0, 10).reverse(),
+    y: yticks,
+    text: otu_labels.slice(0, 10).reverse(),
+    type: "bar"
+};
 
-// var data = [trace1];
+var data = [trace1];
 
-// var layout = {
-//   title: "Bacteria Levels"
-// };
+var layout = {
+  title: "Bacteria Levels"
+};
 
-// Plotly.newPlot("belly button bacteria", data, layout);
+Plotly.newPlot("belly button bacteria", data, layout);
 
-// //create bubble chart
-// var trace1 = {
-//     x: otu_ids,
-//     y: sample_values,
-//     text: otu_labels,
-//     mode: 'markers',
-//     marker: {
-//         color: otu_ids,
-//         size: sample_values,
-//     }
-//   };
+//create bubble chart
+var trace1 = {
+    x: otu_ids,
+    y: sample_values,
+    text: otu_labels,
+    mode: 'markers',
+    marker: {
+        color: otu_ids,
+        size: sample_values,
+    }
+  };
   
-//   var data = [trace1];
+  var data = [trace1];
   
-//   var layout = {
-//     title: 'Belly Button Bacteria',
-//     showlegend: true,
-//     height: 600,
-//     width: 600
-//   };
+  var layout = {
+    title: 'Belly Button Bacteria',
+    showlegend: true,
+    height: 600,
+    width: 600
+  };
   
-//   Plotly.newPlot('myDiv', data, layout);
+  Plotly.newPlot('myDiv', data, layout);
 
 
   // Creating function for Data plotting (Bar, gauge, bubble)
